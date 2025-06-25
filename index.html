@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0N3WWWQ7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V0N3WWWQ7V');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; frame-src *; connect-src *;">
+  <meta name="description" content="Acertos Club - Melhor banca do Brasil!">
+  <meta name="keywords" content="Acertos Club, apostas online, banca online, jogos de aposta">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Acertos Club - Banca Online">
+  <meta property="og:description" content="Descubra a melhor banca online com Acertos Club!">
+  <meta property="og:url" content="https://acertosbet.club">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://acertosbet.club/og-image.jpg">
+  <title>Acertos Club - Melhor Banca do Brasil</title>
+  <link rel="icon" href="acertos.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f6f8;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      height: 50px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    header img {
+      height: 35px;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+    header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    #main-content {
+      flex: 1;
+      margin-top: 50px;
+      margin-bottom: 60px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    #acertos, #aguia, #feiticeira, #brazz, #suporte {
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+    }
+    #suporte {
+      padding: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: none;
+    }
+    #suporte-content {
+      padding: 16px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      width: 100%;
+      opacity: 0;
+    }
+    #suporte-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      border-radius: 10px;
+    }
+    footer {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border-top: 2px solid #e0e6ec;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      gap: 6px;
+    }
+    .footer-bar {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      height: 20px;
+      width: 100%;
+      position: fixed;
+      bottom: -20px;
+      z-index: 9;
+    }
+    footer .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 48px;
+      gap: 4px;
+    }
+    footer button {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      justify-content: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    footer button.selected {
+      background: rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+    }
+    footer button img {
+      height: 28px;
+      width: 28px;
+    }
+    footer button i {
+      font-size: 28px;
+    }
+    footer button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    footer button:active {
+      transform: scale(0.95);
+    }
+    button:not(footer button) {
+      background: #f59e0b;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+      margin: 8px 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button:not(footer button):hover {
+      background: #d97706;
+    }
+    button:not(footer button):active {
+      transform: scale(0.98);
+    }
+    button.green {
+      background: #10b981;
+    }
+    button.green:hover {
+      background: #059669;
+    }
+    button:disabled {
+      background: #d1d5db;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .error {
+      color: #ef4444;
+      font-size: 14px;
+      margin: 10px 0;
+      padding: 10px;
+      background: #fef2f2;
+      border-radius: 6px;
+    }
+    .success {
+      color: #10b981;
+      font-size: 14px;
+      margin: 10px 0;
+      padding: 10px;
+      background: #ecfdf5;
+      border-radius: 6px;
+    }
+    .loading {
+      font-size: 14px;
+      color: #374151;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .loading::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid #f59e0b;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 8px 15px;
+      }
+      header img {
+        height: 30px;
+      }
+      header h1 {
+        font-size: 16px;
+      }
+      #main-content {
+        margin-top: 50px;
+        margin-bottom: 60px;
+      }
+      #suporte {
+        padding: 12px;
+      }
+      #suporte-content {
+        max-width: 100%;
+      }
+      footer {
+        padding: 6px;
+        height: 60px;
+        bottom: 0;
+      }
+      .footer-bar {
+        height: 20px;
+        bottom: -20px;
+      }
+      footer .row {
+        height: 40px;
+      }
+      footer button {
+        font-size: 12px;
+        padding: 4px;
+      }
+      footer button img {
+        height: 24px;
+        width: 24px;
+      }
+      footer button i {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="acertos.png" alt="Acertos Club Logo">
+    <h1>ACERTOS CLUB</h1>
+  </header>
+
+  <div id="main-content">
+    <div id="acertos">
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.acertos.club/pr/JcsF2PpU" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+    </div>
+    <div id="aguia" class="hidden">
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.aguiaoficial.com/pr/ZXbjMC6Q" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+    </div>
+    <div id="feiticeira" class="hidden">
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.feiticeira.vip/pr/2iCVbLKr" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+    </div>
+    <div id="brazz" class="hidden">
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.brazz.com/pr/unknown" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+    </div>
+    <div id="suporte" class="hidden">
+      <div id="suporte-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="row">
+      <button onclick="mostrar('acertos')" class="selected">
+        <img src="acertos.png" alt="Acertos Club">
+        Acertos Club
+      </button>
+      <button onclick="mostrar('aguia')">
+        <img src="aguia.png" alt="Águia Oficial">
+        Águia Oficial
+      </button>
+      <button onclick="mostrar('feiticeira')">
+        <img src="feiticeira.png" alt="Feiticeira Vip">
+        Feiticeira Vip
+      </button>
+      <button onclick="mostrar('brazz')">
+        <img src="brazz.png" alt="Brazz">
+        Brazz
+      </button>
+      <button onclick="mostrar('suporte')">
+        <i class="fab fa-whatsapp"></i>
+        Suporte
+      </button>
+    </div>
+  </footer>
+  <div class="footer-bar"></div>
+
+  <script>
+    function mostrar(id) {
+      console.log(`mostrar: id=${id}`);
+      try {
+        const acertos = document.getElementById('acertos');
+        const aguia = document.getElementById('aguia');
+        const feiticeira = document.getElementById('feiticeira');
+        const brazz = document.getElementById('brazz');
+        const suporte = document.getElementById('suporte');
+        const suporteContent = document.getElementById('suporte-content');
+
+        if (!acertos || !aguia || !feiticeira || !brazz || !suporte || !suporteContent) {
+          console.error('Um ou mais elementos principais não encontrados:', { acertos, aguia, feiticeira, brazz, suporte, suporteContent });
+          document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+          return;
+        }
+
+        if (id === 'suporte') {
+          window.open('https://wa.me/5583994073892?text=Ol%C3%A1%2C%20Suporte.%20Preciso%20de%20ajuda%21', '_blank');
+          return;
+        }
+
+        acertos.style.display = id === 'acertos' ? 'block' : 'none';
+        aguia.style.display = id === 'aguia' ? 'block' : 'none';
+        feiticeira.style.display = id === 'feiticeira' ? 'block' : 'none';
+        brazz.style.display = id === 'brazz' ? 'block' : 'none';
+        suporte.style.display = 'none';
+
+        suporteContent.classList.toggle('visible', id === 'suporte');
+
+        document.querySelectorAll('footer button').forEach(button => {
+          button.classList.remove('selected');
+          if (button.getAttribute('onclick') === `mostrar('${id}')`) {
+            button.classList.add('selected');
+          }
+        });
+      } catch (e) {
+        console.error('Erro na função mostrar:', e);
+        document.body.innerHTML = '<p class="error">Erro crítico ao carregar a seção. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded: Iniciando');
+      try {
+        mostrar('acertos');
+      } catch (e) {
+        console.error('Erro na inicialização:', e);
+        document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+      }
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (let registration of registrations) {
+            registration.unregister().catch(e => console.warn('Erro ao desregistrar service worker:', e));
+          }
+        }).catch(e => console.warn('Erro ao obter registros de service worker:', e));
+      }
+    });
+  </script>
+</body>
+</html>
