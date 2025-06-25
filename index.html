@@ -41,7 +41,6 @@
       overflow-x: hidden;
     }
     header {
-      background: linear-gradient(135deg, #f97316, #ea580c);
       display: flex;
       align-items: center;
       padding: 10px 20px;
@@ -51,6 +50,16 @@
       top: 0;
       width: 100%;
       z-index: 10;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    header.tiger {
+      background: #4b4b4b;
+    }
+    header.feiticeira {
+      background: #1a3c34;
+    }
+    header.brazz {
+      background: #000000;
     }
     header img {
       height: 35px;
@@ -105,7 +114,6 @@
       border-radius: 10px;
     }
     footer {
-      background: linear-gradient(135deg, #f97316, #ea580c);
       display: flex;
       flex-direction: column;
       padding: 10px;
@@ -117,14 +125,33 @@
       box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
       z-index: 10;
       gap: 6px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    footer.tiger {
+      background: #4b4b4b;
+    }
+    footer.feiticeira {
+      background: #1a3c34;
+    }
+    footer.brazz {
+      background: #000000;
     }
     .footer-bar {
-      background: linear-gradient(135deg, #f97316, #ea580c);
       height: 20px;
       width: 100%;
       position: fixed;
       bottom: -20px;
       z-index: 9;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+    }
+    .footer-bar.tiger {
+      background: #4b4b4b;
+    }
+    .footer-bar.feiticeira {
+      background: #1a3c34;
+    }
+    .footer-bar.brazz {
+      background: #000000;
     }
     footer .row {
       display: flex;
@@ -234,6 +261,29 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+    .notification {
+      position: fixed;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      text-align: center;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .notification.visible {
+      opacity: 1;
+    }
+    .notification h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
@@ -280,46 +330,57 @@
       footer button i {
         font-size: 24px;
       }
+      .notification {
+        top: 50px;
+        padding: 12px;
+      }
+      .notification h3 {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <img src="acertos.png" alt="Acertos Club Logo">
     <h1>ACERTOS CLUB</h1>
   </header>
 
   <div id="main-content">
     <div id="acertos">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.acertos.club/pr/JcsF2PpU" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.acertos.club/pr/Brj5b9RM" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
     <div id="aguia" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.aguiaoficial.com/pr/ZXbjMC6Q" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.tigersclub.vip/pr/SDyz43qa" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
     <div id="feiticeira" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.feiticeira.vip/pr/2iCVbLKr" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.bancabrasileira.com.br/pr/kNCaMqXJ" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
     <div id="brazz" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.brazz.com/pr/unknown" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
+      <iframe allow="clipboard-read; clipboard-write" src="https://app.brazz.club/pr/ruhvNPxt" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
     </div>
     <div id="suporte" class="hidden">
       <div id="suporte-content"></div>
     </div>
+    <div id="notification" class="notification">
+      <h3>Seja nosso promotor</h3>
+      <button class="green" onclick="window.open('https://wa.me/5583993110329?text=Quero%20ser%20promotor%21', '_blank')">Tornar-se Promotor</button>
+    </div>
   </div>
 
-  <footer>
+  <footer id="footer">
     <div class="row">
       <button onclick="mostrar('acertos')" class="selected">
         <img src="acertos.png" alt="Acertos Club">
         Acertos Club
       </button>
       <button onclick="mostrar('aguia')">
-        <img src="aguia.png" alt="Águia Oficial">
-        Águia Oficial
+        <img src="tiger.png" alt="Tiger Club">
+        Tiger Club
       </button>
       <button onclick="mostrar('feiticeira')">
-        <img src="feiticeira.png" alt="Feiticeira Vip">
-        Feiticeira Vip
+        <img src="brasileirinha.png" alt="Banca Brasileira">
+        Banca Brasileira
       </button>
       <button onclick="mostrar('brazz')">
         <img src="brazz.png" alt="Brazz">
@@ -331,7 +392,7 @@
       </button>
     </div>
   </footer>
-  <div class="footer-bar"></div>
+  <div id="footer-bar" class="footer-bar"></div>
 
   <script>
     function mostrar(id) {
@@ -343,10 +404,14 @@
         const brazz = document.getElementById('brazz');
         const suporte = document.getElementById('suporte');
         const suporteContent = document.getElementById('suporte-content');
+        const header = document.getElementById('header');
+        const footer = document.getElementById('footer');
+        const footerBar = document.getElementById('footer-bar');
+        const notification = document.getElementById('notification');
 
-        if (!acertos || !aguia || !feiticeira || !brazz || !suporte || !suporteContent) {
-          console.error('Um ou mais elementos principais não encontrados:', { acertos, aguia, feiticeira, brazz, suporte, suporteContent });
-          document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+        if (!acertos || !aguia || !feiticeira || !brazz || !suporte || !suporteContent || !header || !footer || !footerBar) {
+          console.error('Um ou mais elementos principais não encontrados:', { acertos, aguia, feiticeira, brazz, suporte, suporteContent, header, footer, footerBar });
+          document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/556181127992">WhatsApp</a></p>';
           return;
         }
 
@@ -363,6 +428,35 @@
 
         suporteContent.classList.toggle('visible', id === 'suporte');
 
+        // Reset header and footer classes
+        header.classList.remove('tiger', 'feiticeira', 'brazz');
+        footer.classList.remove('tiger', 'feiticeira', 'brazz');
+        footerBar.classList.remove('tiger', 'feiticeira', 'brazz');
+
+        // Apply specific classes based on section
+        if (id === 'aguia') {
+          header.classList.add('tiger');
+          footer.classList.add('tiger');
+          footerBar.classList.add('tiger');
+        } else if (id === 'feiticeira') {
+          header.classList.add('feiticeira');
+          footer.classList.add('feiticeira');
+          footerBar.classList.add('feiticeira');
+        } else if (id === 'brazz') {
+          header.classList.add('brazz');
+          footer.classList.add('brazz');
+          footerBar.classList.add('brazz');
+        }
+
+        // Handle notification for brazz
+        notification.classList.remove('visible');
+        if (id === 'brazz') {
+          notification.classList.add('visible');
+          setTimeout(() => {
+            notification.classList.remove('visible');
+          }, 10000);
+        }
+
         document.querySelectorAll('footer button').forEach(button => {
           button.classList.remove('selected');
           if (button.getAttribute('onclick') === `mostrar('${id}')`) {
@@ -371,7 +465,7 @@
         });
       } catch (e) {
         console.error('Erro na função mostrar:', e);
-        document.body.innerHTML = '<p class="error">Erro crítico ao carregar a seção. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+        document.body.innerHTML = '<p class="error">Erro crítico ao carregar a seção. Contate o suporte: <a href="https://wa.me/556181127992">WhatsApp</a></p>';
       }
     }
 
@@ -381,7 +475,7 @@
         mostrar('acertos');
       } catch (e) {
         console.error('Erro na inicialização:', e);
-        document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/5583994073892">WhatsApp</a></p>';
+        document.body.innerHTML = '<p class="error">Erro ao carregar a página. Contate o suporte: <a href="https://wa.me/556181127992">WhatsApp</a></p>';
       }
 
       if ('serviceWorker' in navigator) {
